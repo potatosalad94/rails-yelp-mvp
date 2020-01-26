@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 class="page-section"><%= @restaurant.name %></h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="show-resto bg-white rounded">
+        <div>
+          <p>Address: <%= @restaurant.address %></p>
+          <p>Phone number: <%= @restaurant.phone_number %></p>
+          <p>Category: <%= @restaurant.category %></p>
+        </div>
+      </div>
+      <br>
+      <h2>Reviews</h2>
+      <div class="resto-reviews bg-white rounded">
+        <% @restaurant.reviews.each do |review| %>
+          <div class="resto-rating">
+            <p><%= review.content %></p>
+            <p>
+              <% review.rating.times do %>
+                <span><i class="fas fa-star"></i></span>
+              <% end %>
+              <% (5 - review.rating).times do %>
+                <span><i class="far fa-star"></i></span>
+              <% end %>
+            </p>
+          </div>
+          <hr>
+        <% end %>
+      </div>
+      <hr>
+      <h2>Add a review</h2>
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+        <%= f.input :content, as: :text %>
+        <%= f.input :rating, collection: [1, 2, 3, 4, 5] %>
+        <%= f.submit "Add review", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

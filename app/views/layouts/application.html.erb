@@ -12,6 +12,19 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <%= link_to restaurants_path, class: 'navbar-brand' do %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+    <% end %>
+    <%= link_to new_restaurant_path do %>
+      <div class="btn btn-primary">
+       <i class="fas fa-plus-square"></i> Add a restaurant
+      </div>
+    <% end %>
+  </div>
+
+  <%= yield %>
+
   </body>
 </html>

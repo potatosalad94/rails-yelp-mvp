@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="page-section">My Restaurants</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-12 col-sm-6 rounded">
+        <div class="bg-white card">
+          <%= link_to restaurant_path(restaurant), class: 'link' do %>
+            <h2><%= restaurant.name %></h2>
+          <% end %>
+          <hr>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

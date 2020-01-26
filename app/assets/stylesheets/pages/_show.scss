@@ -1,0 +1,29 @@
+.show-resto{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.page-section{
+  margin: 30px 0;
+}
+
+.link{
+  text-decoration: none;
+  color: $black;
+  &:hover{
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+.resto-reviews{
+  padding: 20px;
+}
+
+.resto-rating{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
